@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html ng-app="appEIS">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> EIS - Empployee Information System </title>
+    <!--<base href="{{baseUrl}}" ng-init="baseUrl = 'http://localhost:60736/api/'" />-->
+</head>
+<body>  
+    <div id="wrapper" class="active">
+        <!-- Sidebar -->
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper" ng-controller="appEISController">
+            <ul id="sidebar_menu" class="sidebar-nav">
+                <li class="sidebar-brand"><a id="menu-toggle" href="#">EIS - Menu<span id="main_icon" class="glyphicon glyphicon-align-justify"></span></a></li>
+            </ul>
+            <ul class="sidebar-nav" id="sidebar">
+                    <li class="active"><a href="#/Home">Home <span style="font-size:16px;" class="pull-right glyphicon glyphicon-home"></span></a></li>
+                    <li ng-if="Auth=='true' && EmpSignIn.Role.RoleCode=='A'"><a href="#/EmployeeManagement">Employee Mgmt <span style="font-size:16px;" class="pull-right glyphicon glyphicon-tasks"></span></a></li>
+                    <li ng-if="Auth=='true'"><a href="#/EmployeeProfile">Employee Profile<span style="font-size:16px;" class="pull-right glyphicon glyphicon-pencil"></span></a></li>
+                    <li ng-if="Auth=='true'"><a href="#/Logout">Logout <span style="font-size:16px;" class="pull-right glyphicon glyphicon-log-out"></span></a></li>
+                    <li ng-if="Auth=='false'"><a href="#/Login">Login <span style="font-size:16px;" class="pull-right glyphicon glyphicon-log-in"></span></a></li>               
+                    <li ng-if="Auth=='true'"><a href="#"><img src="data:image/jpeg;base64,{{imgSideBar}}" class="img-circle" height="30" width="30"> Welcome, {{EmpSignIn.FirstName}}<span style="font-size:16px;" class="pull-right glyphicon glyphicon-user"></span></a></li>
+
+            </ul>
+        </div>
+
+        <!-- Page content -->
+        <div id="page-content-wrapper">
+            <!-- Keep all page content within the page-content inset div! -->
+            <div class="page-content inset">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div ng-view="">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--<div ng-controller="appEISController">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"> E I S </a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#/Home">Home <span class="sr-only">(current)</span></a></li>
+                        <li ng-if="Auth=='true' && EmpSignIn.Role.RoleCode=='A'"><a  href="#/EmployeeManagement">Employee Management</a></li>
+                        <li ng-if="Auth=='true'"><a href="#/EmployeeProfile">Employee Profile</a></li>
+
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li ng-if="Auth=='true'"><a href="#">Welcome Mr.\ Ms. {{EmpSignIn.Email}}</a></li>
+                        <li ng-if="Auth=='true'"><a  href="#/Logout">Logout</a></li>
+                        <li ng-if="Auth=='false'"><a href="#/Login">Login</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container body-content">
+        <div ng-view="">
+
+        </div>
+        
+        </div>-->
+    <div>
+            <footer>
+                <center><p>&copy; 2016 - My ASP.NET AngularJS Application</p></center>
+            </footer>
+        <blockquote class="pull-right">
+            <p>No engineer should leave their country for hunting the job.</p>
+            <small><a href="http://www.manzoorthetrainer.com" target="_blank"> ManzoorTheTrainer</a><cite title="Source Title"> [MCT]</cite></small>
+        </blockquote>
+        </div>
+</body>
+</html>
+<script src="Scripts/jquery-1.9.1.min.js"></script>
+<script src="Scripts/angular.min.js"></script>
+<script src="Scripts/angular-route.min.js"></script>
+<script src="Scripts/dirPagination.js"></script>
+<script src="eis.js"></script>
+<script src="Scripts/bootstrap.min.js"></script>
+<link href="Content/bootstrap.min.css" rel="stylesheet" />
+<link href="Content/bootstrap.custom.css" rel="stylesheet" />
+<script src="Views/Common/Home/home.js"></script>
+<script src="Views/Common/Login/login.js"></script>
+<script src="Views/Common/RecoverPassword/recoverPassword.js"></script>
+<script src="Views/Employee/EmployeeMgmt/employeeMgmt.js"></script>
+<script src="Views/Employee/EmployeeUpdate/employeeUpdate.js"></script>
+<script src="Views/Employee/EmployeeView/employeeView.js"></script>
+<script src="Scripts/angular-cookies.min.js"></script>
+<link href="Content/loading-bar.min.css" rel="stylesheet" />
+<script src="Scripts/loading-bar.min.js"></script>
