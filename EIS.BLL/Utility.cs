@@ -18,7 +18,7 @@ namespace EIS.BLL
             client.Timeout = 10000;
             client.DeliveryMethod = SmtpDeliveryMethod.Network;
             client.UseDefaultCredentials = false;
-            client.Credentials = new System.Net.NetworkCredential("youremail@gmail.com", "*****************");
+            client.Credentials = new System.Net.NetworkCredential("isainokia@gmail.com", "antares155");
 
             MailMessage mm = new MailMessage("Admin@EIS.com", ToEmail, Subject, Body);
                         
